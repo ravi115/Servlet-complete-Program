@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Servlet-Tutorials</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Make sure no Servlet-mapping should contain same URL pattern -->
+  
+  <!--
+  	This context-param for ServletContext.
+  	ServletContext belongs to all the Servlet available in the same Servlet Container. 
+  -->
+  <context-param>
+    <param-name>name</param-name>
+    <param-value>Ravi Ranjan Kumar</param-value>
+  </context-param>
+  
+  <!-- 
+  	A new Servlet to demonstrate servlet life cycle.
+  -->
+  <servlet>
+    <servlet-name>Servlet Life Cycle</servlet-name>
+    <servlet-class>com.servlet.life.ServletLifeCycle</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Servlet Life Cycle</servlet-name>
+    <url-pattern>/servlet</url-pattern>
+  </servlet-mapping>
+  
+   <!-- 
+  	A new Servlet to demonstrate Generic servlet.
+  	-->
+  <servlet>
+    <servlet-name>My Generic Servlet</servlet-name>
+    <servlet-class>com.servlet.generic.MyGenericServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>My Generic Servlet</servlet-name>
+    <url-pattern>/servlet/generic</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 
+  	A new Servlet to demonstrate Http servlet.
+  	-->
+  <servlet>
+    <servlet-name>My Http Servlet</servlet-name>
+    <servlet-class>com.servlet.http.MyHttpServlet</servlet-class>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>My Http Servlet</servlet-name>
+    <url-pattern>/servlet/http</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 
+  	A new Servlet to demonstrate  servlet Config.
+  -->
+  <servlet>
+    <servlet-name>My Servlet Config</servlet-name>
+    <servlet-class>com.servlet.config.MyServletConfig</servlet-class>
+    <!-- init param is for servlet config.
+    	Servlet config is per servlet.
+    -->
+    <init-param>
+      <param-name>name</param-name>
+      <param-value>Ravi Ranjan</param-value>
+    </init-param>
+    <init-param>
+      <param-name>email</param-name>
+      <param-value>ravi.ranjan@celstream.com</param-value>
+    </init-param>
+    <load-on-startup>10</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>My Servlet Config</servlet-name>
+    <url-pattern>/servlet/config</url-pattern>
+  </servlet-mapping>
+  
+   <!-- 
+  	A new Servlet to demonstrate  servlet context.
+  -->
+  <servlet>
+    <servlet-name>My Servlet Context</servlet-name>
+    <servlet-class>com.servlet.context.MyServletContext</servlet-class>
+    <load-on-startup>-5</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>My Servlet Context</servlet-name>
+    <url-pattern>/servlet/context</url-pattern>
+  </servlet-mapping>
+  
+  <!-- session timeout for all servlet available in the web application-->
+  <session-config>
+  		<!-- in 5 minutes the session will be expired for all servlet in this web application -->
+  		<session-timeout>5</session-timeout>
+  </session-config>
+  
+ 
+  <!-- <filter>
+  	<filter-name>My dummy Filter</filter-name>
+  	<filter-class>com.servlet.filter.DummyFilters</filter-class>
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>ravi</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>My dummy Filter</filter-name>
+  	<servlet-name>Examples Login servlet</servlet-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping> -->
+  
+  
+  
+</web-app>

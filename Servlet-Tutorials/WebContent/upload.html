@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<p> hey user upload your file!</p>
+	<!-- enctype must be required.  -->
+	<form action="fileupload" method="post" enctype="multipart/form-data">
+		
+		<label>UserName</label>
+		<input type="text" name="user" placeholder="Enter your user name"/><br/>
+		<label>Password</label>
+		<input type="password" name="pwd" placeholder="Enter your password"/><br/>
+		
+		<label>Chose a file to upload</label>
+		<input type="file" value="upload"/>
+		<br/>
+		<input type="submit" value="upload"/>
+		
+	</form>
+</body>
+</html>
